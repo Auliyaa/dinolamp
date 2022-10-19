@@ -31,6 +31,7 @@ void rainbow()
 
 void snake()
 {
+  static constexpr const int hue_step=2;
   static int snake_h = 0;
   static int snake_incr = 1;
 
@@ -45,8 +46,8 @@ void snake()
   }
 
   snake_h+=snake_incr*1;
-  if (snake_h == 360) snake_incr = -1;
-  else if (snake_h == 0) snake_incr = 1;
+  if (snake_h == 360) snake_incr = -1*hue_step;
+  else if (snake_h == 0) snake_incr = 1*hue_step;
 }
 
 // initial setup, executed once
